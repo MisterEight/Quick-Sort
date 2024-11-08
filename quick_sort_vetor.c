@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-// Iniciar as funções antes das implementações
+// prototipo das funçoes 
 void ordena_quick_sort(int *dados, int inicio, int fim);
 int particiona(int *dados, int inicio, int fim);
 void trocar(int *a, int *b);
@@ -14,7 +14,7 @@ int main() {
     printf("Array original: ");
     imprimirArray(array, tamanho);
 
-    // Ordena o array usando Quick Sort
+    // funçao para ondenar o array
     ordena_quick_sort(array, 0, tamanho - 1);
 
     printf("Array ordenado: ");
@@ -23,7 +23,7 @@ int main() {
     return 0;
 }
 
-// Função para dividir o array e retornar o índice do pivô
+// divide o array e retorna o indece do pivõ
 int particiona(int *dados, int inicio, int fim) {
     int pivo = dados[fim];
     int i = inicio - 1;
@@ -39,7 +39,7 @@ int particiona(int *dados, int inicio, int fim) {
     return i + 1;
 }
 
-// Implementação do Quick Sort
+// execuçao do Quick Sort
 void ordena_quick_sort(int *dados, int inicio, int fim) {
     if (inicio < fim) {
         int indice_pivo = particiona(dados, inicio, fim);
@@ -48,14 +48,14 @@ void ordena_quick_sort(int *dados, int inicio, int fim) {
     }
 }
 
-// Função para trocar dois elementos
+// funçao para trocar dois elementos
 void trocar(int *a, int *b) {
     int temp = *a;
     *a = *b;
     *b = temp;
 }
 
-// Função para imprimir o array
+// imprime o array 
 void imprimirArray(int *array, int tamanho) {
     for (int i = 0; i < tamanho; i++) {
         printf("%d ", array[i]);
